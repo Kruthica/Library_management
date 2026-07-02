@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/students';
+const API_URL = 'https://library-management-nxqp.onrender.com/students';
 
 export const getStudents = async () => {
     return await axios.get(API_URL);

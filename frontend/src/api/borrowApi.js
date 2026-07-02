@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/borrow';
-const HISTORY_URL = 'http://localhost:5000/history';
+const API_URL = 'https://library-management-nxqp.onrender.com/borrow';
+const HISTORY_URL = 'https://library-management-nxqp.onrender.com/history';
 
 export const borrowBook = async (borrowData) => {
     return await axios.post(API_URL, borrowData);
