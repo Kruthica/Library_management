@@ -1,13 +1,14 @@
-import express from 'express'
+import express from 'express';
 import {
     borrow,
     returnbook,
     getAllBorrows
-} from '../controllers/BorrowController.js'
+} from '../controllers/BorrowController.js';
+
 const router = express.Router();
 
-router.post('/borrow', borrow)
-router.post('/returnbook/:id', returnbook)
-router.get('/all', getAllBorrows)
+router.get('/', getAllBorrows);
+router.post('/', borrow);
+router.put('/return/:id', returnbook);
 
-export default router   
+export default router;

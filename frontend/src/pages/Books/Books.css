@@ -1,0 +1,118 @@
+.page-container {
+    padding: 20px 0;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: #333;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.add-btn {
+    background: #2563EB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background: #fef08a;
+    color: #854d0e;
+}
+
+.edit-btn:hover {
+    background: #fde047;
+}
+
+.delete-btn {
+    background: #fecaca;
+    color: #991b1b;
+}
+
+.delete-btn:hover {
+    background: #f87171;
+    color: white;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.modal-form input, 
+.modal-form select {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.modal-form input:focus, 
+.modal-form select:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background-color: #ffffff;
+}
+
+.submit-btn {
+    padding: 12px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+}

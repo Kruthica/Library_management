@@ -1,0 +1,19 @@
+.layout {
+
+    display: flex;
+
+    background: #F4F7FB;
+
+}
+
+.main {
+
+    flex: 1;
+
+}
+
+.page {
+
+    padding: 25px;
+
+}
