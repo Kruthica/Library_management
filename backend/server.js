@@ -6,17 +6,12 @@ import bookRoutes from "./routes/bookRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import borrowRoutes from "./routes/borrowRoutes.js";
 
-import cors from "cors";
-
-app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"]
-}));
-
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 connectDB();
