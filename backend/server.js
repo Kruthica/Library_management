@@ -14,8 +14,9 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        process.env.FRONTEND_URL
-    ].filter(Boolean),
+        "https://library-management-six-omega.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
 app.use(express.json());
