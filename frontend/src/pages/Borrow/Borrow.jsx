@@ -23,8 +23,10 @@ function Borrow() {
         try {
             const studentRes = await getStudents();
             const bookRes = await getBooks();
-            setStudents(studentRes.data);
-            setBooks(bookRes.data.filter(b => b.Available_Copies > 0)); // Only show available books
+            const studentData = studentRes.data;
+            const bookData = bookRes.data;
+            setStudents(Array.isArray(studentData) ? studentData : []);
+            setBooks(Array.isArray(bookData) ? bookData.filter(b => b.Available_Copies > 0) : []);
         } catch (error) {
             console.error("Error fetching data", error);
         }

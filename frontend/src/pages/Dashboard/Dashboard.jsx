@@ -25,9 +25,9 @@ function Dashboard() {
                     getHistory()
                 ]);
 
-                const books = booksRes.data;
-                const students = studentsRes.data;
-                const history = historyRes.data;
+                const books = Array.isArray(booksRes.data) ? booksRes.data : [];
+                const students = Array.isArray(studentsRes.data) ? studentsRes.data : [];
+                const history = Array.isArray(historyRes.data) ? historyRes.data : [];
 
                 let borrowedCount = 0;
                 let overdueCount = 0;

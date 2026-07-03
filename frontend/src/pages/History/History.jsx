@@ -16,7 +16,8 @@ function History() {
     async function fetchHistory() {
         try {
             const res = await getHistory();
-            setHistory(res.data);
+            const data = res.data;
+            setHistory(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error("Error fetching history", error);
         }

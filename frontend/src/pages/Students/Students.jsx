@@ -26,7 +26,8 @@ function Students() {
     async function fetchStudents() {
         try {
             const res = await getStudents();
-            setStudents(res.data);
+            const data = res.data;
+            setStudents(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error("Error fetching students", error);
         }

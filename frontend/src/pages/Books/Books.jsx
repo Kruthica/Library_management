@@ -29,7 +29,8 @@ function Books() {
     async function fetchBooks() {
         try {
             const res = await getBooks();
-            setBooks(res.data);
+            const data = res.data;
+            setBooks(Array.isArray(data) ? data : []);
         } catch (error) {
             console.error("Error fetching books", error);
         }
