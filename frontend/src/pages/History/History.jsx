@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getHistory, returnBook } from "../../api/borrowApi";
 import Table from "../../components/table/table";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/searchbar/SearchBar";
 import { FaCheckCircle } from "react-icons/fa";
 import "../Books/Books.css";
 

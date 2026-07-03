@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getStudents, addStudent, updateStudent, deleteStudent } from "../../api/studentApi";
 import Table from "../../components/table/table";
 import Modal from "../../components/Modal/Modal";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/searchbar/SearchBar";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import "../Books/Books.css"; // Reuse the same CSS for consistent layout
 

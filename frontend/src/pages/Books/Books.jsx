@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getBooks, addBook, updateBook, deleteBook } from "../../api/bookApi";
 import Table from "../../components/table/table";
 import Modal from "../../components/Modal/Modal";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/searchbar/SearchBar";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import "./Books.css";
 
