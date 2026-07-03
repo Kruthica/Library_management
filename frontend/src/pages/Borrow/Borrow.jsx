@@ -19,7 +19,7 @@ function Borrow() {
         fetchData();
     }, []);
 
-    const fetchData = async () => {
+    async function fetchData() {
         try {
             const studentRes = await getStudents();
             const bookRes = await getBooks();

@@ -23,7 +23,7 @@ function Students() {
         fetchStudents();
     }, []);
 
-    const fetchStudents = async () => {
+    async function fetchStudents() {
         try {
             const res = await getStudents();
             setStudents(res.data);

@@ -26,7 +26,7 @@ function Books() {
         fetchBooks();
     }, []);
 
-    const fetchBooks = async () => {
+    async function fetchBooks() {
         try {
             const res = await getBooks();
             setBooks(res.data);

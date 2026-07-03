@@ -13,7 +13,7 @@ function History() {
         fetchHistory();
     }, []);
 
-    const fetchHistory = async () => {
+    async function fetchHistory() {
         try {
             const res = await getHistory();
             setHistory(res.data);

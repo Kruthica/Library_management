@@ -17,51 +17,53 @@ function Dashboard() {
     const [recentBorrows, setRecentBorrows] = useState([]);
 
     useEffect(() => {
+        async function fetchDashboardData() {
+            try {
+                const [booksRes, studentsRes, historyRes] = await Promise.all([
+                    getBooks(),
+                    getStudents(),
+                    getHistory()
+                ]);
+
+                const books = booksRes.data;
+                const students = studentsRes.data;
+                const history = historyRes.data;
+
+                let borrowedCount = 0;
+                let overdueCount = 0;
+
+                const today = new Date();
+
+                history.forEach(record => {
+                    if (record.status === "borrowed") {
+                        borrowedCount++;
+                        const dueDate = new Date(record.dueDate);
+                        if (dueDate < today) {
+                            overdueCount++;
+                        }
+                    }
+                    ;
+                });
+
+
+                setStats({
+                    totalBooks: books.length,
+                    totalStudents: students.length,
+                    borrowed: borrowedCount,
+                    overdue: overdueCount
+                });
+
+                // Get the 5 most recent borrows
+                const recent = history.slice(-5).reverse();
+                setRecentBorrows(recent);
+
+            } catch (error) {
+                console.error("Error fetching dashboard data", error);
+            }
+        }
+
         fetchDashboardData();
     }, []);
-
-    const fetchDashboardData = async () => {
-        try {
-            const [booksRes, studentsRes, historyRes] = await Promise.all([
-                getBooks(),
-                getStudents(),
-                getHistory()
-            ]);
-
-            const books = booksRes.data;
-            const students = studentsRes.data;
-            const history = historyRes.data;
-
-            let borrowedCount = 0;
-            let overdueCount = 0;
-
-            const today = new Date();
-
-            history.forEach(record => {
-                if (record.status === "borrowed") {
-                    borrowedCount++;
-                    const dueDate = new Date(record.dueDate);
-                    if (dueDate < today) {
-                        overdueCount++;
-                    }
-                }
-            });
-
-            setStats({
-                totalBooks: books.length,
-                totalStudents: students.length,
-                borrowed: borrowedCount,
-                overdue: overdueCount
-            });
-
-            // Get the 5 most recent borrows
-            const recent = history.slice(-5).reverse();
-            setRecentBorrows(recent);
-
-        } catch (error) {
-            console.error("Error fetching dashboard data", error);
-        }
-    };
 
     const columns = ["Student", "Book", "Due Date", "Status"];
 

@@ -8,7 +8,7 @@ import Borrow from "./pages/Borrow/Borrow";
 import History from "./pages/History/History";
 
 import Layout from "./components/Layout/Layout";
-
+console.log(import.meta.env.VITE_API_URL);
 function App() {
   return (
     <Routes>

@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:5000/books';
+import BASE_URL from "./base";
+const API_URL = `${BASE_URL}/books`;
 
 export const getBooks = async () => {
     return await axios.get(API_URL);

@@ -1,7 +1,7 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:5000/borrow';
-const HISTORY_URL = 'http://localhost:5000/history';
+import BASE_URL from "./base";
+const API_URL = `${BASE_URL}/borrow`;
+const HISTORY_URL = `${BASE_URL}/history`;
 
 export const borrowBook = async (borrowData) => {
     return await axios.post(API_URL, borrowData);
