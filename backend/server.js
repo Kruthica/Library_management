@@ -14,7 +14,8 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://library-management-six-omega.vercel.app"
+        "https://library-management-six-omega.vercel.app",
+        "https://library-management-p9jh3oa2h-kruthicas-projects.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
